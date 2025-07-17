@@ -1,33 +1,21 @@
-import React from 'react'
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
-import Logo from '../src/Components/Logo.jsx'
-import EncryptButton from './Components/EncryptButton.jsx'
-import { SmoothScrollHero } from './Components/SmoothScrollHero.jsx'
-import BubbleText from './Components/BubbleText.jsx'
-import { SFT } from './Components/SFT.jsx'
-import ShiftingCountdown from './Components/ShiftingCountdown.jsx'
+import Navbar from './Components/Navbar'
+import Home from './Components/Home'
+import SignUp from './Components/SignUp'
+
 
 export default function App() {
-return (
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/signUp' element={<SignUp />} />
+      </Routes>
 
-
-<BrowserRouter>
-<div className='bg-black flex justify-between'>
-  <Logo />
-  <EncryptButton />
-</div>
-<SmoothScrollHero />
-<BubbleText />
-
-
-
-
-<SFT />
-<ShiftingCountdown />
-
-</BrowserRouter>
-)
+    </BrowserRouter>
+  )
 }
 
 
